@@ -1,0 +1,16 @@
+[
+{
+  "modid": "happylittlemod",
+  "name": "Happy Little Mod",
+  "description": "Very simple mod.  Just look at a tooltip.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://minecraft.curseforge.com/projects/happy-little-mod",
+  "updateUrl": "https://minecraft.curseforge.com/projects/happy-little-mod",
+  "authorList": ["Selim_042"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
