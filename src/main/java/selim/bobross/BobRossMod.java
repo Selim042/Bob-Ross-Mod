@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.minecraft.client.resources.I18n;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -28,22 +29,28 @@ public class BobRossMod {
 	private static final Random rand = new Random();
 	private static final String[] PREFIXES = new String[] { "prefixes." + MODID + ":happy",
 			"prefixes." + MODID + ":happy_little" };
-	private static final HashMap<String, String> PREFIX_CACHE = new HashMap<String,String>();
+	private static final HashMap<String, String> PREFIX_CACHE = new HashMap<>();
 
 	@SubscribeEvent
 	public static void onTooltip(ItemTooltipEvent event) {
+		ItemStack stack = event.getItemStack();
 		List<String> tooltip = event.getToolTip();
 		if (tooltip.size() < 1)
 			return;
 		String prevName = tooltip.get(0);
-		tooltip.set(0, getDisplayName(prevName));
+		if (stack != null && stack.getItem().equals(Items.SPAWN_EGG)) {
+			String translatedSpawn = I18n.format("item.monsterPlacer.name");
+			prevName = prevName.replace(translatedSpawn, "").trim();
+			tooltip.set(0, translatedSpawn + " " + getDisplayName(prevName));
+		} else
+			tooltip.set(0, getDisplayName(prevName));
 	}
 
 	private static String getDisplayName(String prevName) {
 		if (PREFIX_CACHE.containsKey(prevName))
 			return PREFIX_CACHE.get(prevName);
 		String newName = I18n.format(PREFIXES[rand.nextInt(PREFIXES.length)], prevName);
-		PREFIX_CACHE.put(prevName,newName);
+		PREFIX_CACHE.put(prevName, newName);
 		return newName;
 	}
 
