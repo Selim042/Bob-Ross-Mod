@@ -21,7 +21,7 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-//@Mod(BobRossMod.MODID)
+@Mod(BobRossMod.MODID)
 public class BobRossMod {
 
 	static {

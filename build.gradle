@@ -99,7 +99,7 @@ jar {
             "Specification-Title": "happylittlemod",
             "Specification-Vendor": "Selim",
             "Specification-Version": "1", // We are version 1 of ourselves
-            
+
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
             "Implementation-Vendor" :"Selim",
