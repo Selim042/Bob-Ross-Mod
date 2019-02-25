@@ -1,4 +1,9 @@
 {
     "prefixes.happylittlemod.happy": "Happy %s",
-    "prefixes.happylittlemod.happy_little": "Happy Little %s"
+    "prefixes.happylittlemod.happy_little": "Happy Little %s",
+
+    "prefixes.happylittlemod.happy_fish_bucket": "Happy %1$s of Happy %2$s",
+    "prefixes.happylittlemod.happy_little_fish_bucket": "Happy Little %1$s of Happy Little %2$s",
+
+	"misc.happylittlemod.fish_bucket_seperator": " of "
 }
